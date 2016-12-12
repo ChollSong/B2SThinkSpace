@@ -1,0 +1,11 @@
+{
+  "name": "serverForInfoSys",
+  "version": "0.0.1",
+  "description": "my first server app",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "mongodb": "^2.2.15",
+    "multer": "^1.2.0",
+    "express": "^4.14.0"
+  }
+}
