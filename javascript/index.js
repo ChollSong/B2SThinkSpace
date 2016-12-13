@@ -10,20 +10,52 @@ $(document).ready(function(){
 
 });
 
-function callPage(pageRefInput){
+function getSubAreaInfo(num){
 
-	console.log(pageRefInput);
+	console.log('HELLO!')
+
+	$.ajax({
+		url: "url:/v/areas?subArea=’" + num + "’" ,
+		type: 'GET',
+		datatype: 'json',
+		success: function(response){
+			console.log(response);
+		},
+		error: function(response){
+			console.log('error');
+		}
+	});
+
+}
+
+function getSubAreaInfoTest(){
+
+	console.log('TESTING ONLY')
+
+	$.ajax({
+		url: "url:/v/areas?subArea=1" ,
+		type: 'GET',
+		datatype: 'json',
+		success: function(response){
+			console.log(response);
+		},
+		error: function(response){
+			console.log('error');
+		}
+	});
+
+}
+
+function callPage(pageRefInput){
 
 	$.ajax({
 		url: pageRefInput,
 		type: 'GET',
 		datatype: 'text/html',
 		success: function(response){
-			console.log('Loaded', response);
 			$('.content').html(response);
 		},
 		error: function(response){
-			console.log('Error', response);
 		}
 	});
 
@@ -33,7 +65,6 @@ function changeImg(id, imgURL){
 	$("#f1").hide();
 	$("#f2").hide();
 	$("#t1").hide();
-	$("#t2").hide();
 	$(id).show();
 	$('#map_img').attr('src', imgURL);
 }
