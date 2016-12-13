@@ -76,7 +76,7 @@ function changeImg(id, imgURL){
 function getFloor(num){
 
 	$.ajax({
-		url: "url:/v/areas" ,
+		url: "url:/v/areas",
 		type: 'GET',
 		datatype: 'json',
 		success: function(response){
@@ -95,7 +95,7 @@ function getArea(num){
 	var url = "url:/v/areas?subArea=" + num;
 
 	$.ajax({
-		url: url ,
+		url: url,
 		type: 'GET',
 		datatype: 'json',
 		success: function(response){
@@ -112,7 +112,7 @@ function getArea(num){
 function userLogIn(){
 	
 	$.ajax({
-		url: url ,
+		url: '/v/user',
 		type: 'POST',
 		datatype: 'json',
 		data: JSON.stringify({
