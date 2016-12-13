@@ -1,3 +1,7 @@
+var mHead = '';
+var mText = '';
+var mSeat = '';
+
 $(document).ready(function(){
 
 	callPage('home.html');
@@ -10,7 +14,7 @@ $(document).ready(function(){
 
 });
 
-function getSubAreaInfo(num){
+function getInfo(num){
 
 	var url = "url:/v/areas?subArea=" + num;
 
@@ -18,26 +22,11 @@ function getSubAreaInfo(num){
 		url: url,
 		type: 'GET',
 		datatype: 'json',
+		async: false,
 		success: function(response){
-			console.log(response);
-		},
-		error: function(response){
-			console.log('error');
-		}
-	});
-
-}
-
-function getSubAreaInfoTest(){
-
-	console.log('TESTING ONLY')
-
-	$.ajax({
-		url: "url:/v/areas?subArea=1" ,
-		type: 'GET',
-		datatype: 'json',
-		success: function(response){
-			console.log(response);
+			$('#m_name').text(response.area_name);
+			$('#m_info').text(response.infomation);
+			$('#m_snum').text(response.seat_available);
 		},
 		error: function(response){
 			console.log('error');
