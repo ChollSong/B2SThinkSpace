@@ -12,10 +12,10 @@ $(document).ready(function(){
 
 function getSubAreaInfo(num){
 
-	console.log('HELLO!')
+	var url = "url:/v/areas?subArea=" + num;
 
 	$.ajax({
-		url: "url:/v/areas?subArea=’" + num + "’" ,
+		url: url,
 		type: 'GET',
 		datatype: 'json',
 		success: function(response){
@@ -67,4 +67,64 @@ function changeImg(id, imgURL){
 	$("#t1").hide();
 	$(id).show();
 	$('#map_img').attr('src', imgURL);
+}
+
+
+// The functions below are the API in which may or may not be use in the future
+
+//Get floor info.
+function getFloor(num){
+
+	$.ajax({
+		url: "url:/v/areas" ,
+		type: 'GET',
+		datatype: 'json',
+		success: function(response){
+			
+		},
+		error: function(response){
+			
+		}
+	});
+	
+}
+
+//Get list of subarea
+function getArea(num){
+
+	var url = "url:/v/areas?subArea=" + num;
+
+	$.ajax({
+		url: url ,
+		type: 'GET',
+		datatype: 'json',
+		success: function(response){
+			
+		},
+		error: function(response){
+			
+		}
+	});
+
+}
+
+//User log-in
+function userLogIn(){
+	
+	$.ajax({
+		url: url ,
+		type: 'POST',
+		datatype: 'json',
+		data: JSON.stringify({
+			"username": $('#username').val(),
+			"password": $('#password').val()
+		}),
+		success: function(response){
+			
+		},
+		error: function(response){
+			
+		}
+	});
+
 }
