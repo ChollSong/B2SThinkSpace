@@ -45,9 +45,9 @@ function getInfo(num){
 		url: url,
 		type: 'GET',
 		success: [function(response){
-			// $('#m_name').text(response.area_name);
-			// $('#m_info').text(response.infomation);
-			// $('#m_snum').text(response.seat_available);
+			$('#m_name').text(response.area_name);
+			$('#m_info').text(response.information);
+			$('#m_snum').text(response.seat_available);
 			console.log(response);
 		}],
 		error: function(response){
