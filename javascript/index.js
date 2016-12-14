@@ -66,7 +66,7 @@ function getInfoAndProductList(num){
 		url: url,
 		type: 'GET',
 		success: function(response){
-			for(var i = 0, i < response.items.length, i++){
+			for(var i = 0; i < response.items.length; i++){
 				$('#listOfProduct').empty();
 				createProductElement('img/test.jpg', response.items.name[i], 'LOREM IPSUM');
 			}
