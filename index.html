@@ -45,11 +45,17 @@
 					<li><a href="map.html">Map</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.html">Log-in</a></li>
+					<li id="noUsr"><a href="login.html">Log-in</a></li>
+					<li id="loggedIn" style = "display: none;"><a onclick = "userLogOut()">Log-out</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+	
+	<div id="loggedInAlert" class="alert alert-info" style = "display: none;">
+  		You've logged in as <strong><span id='loginUsr'>guest</span></strong>
+	</div>
+
 	<div class="content"></div>
 
 </body>

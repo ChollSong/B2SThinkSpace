@@ -10,6 +10,33 @@ $(document).ready(function(){
 
 });
 
+//Making this a single-page app
+function callPage(pageRefInput){
+
+	$.ajax({
+		url: pageRefInput,
+		type: 'GET',
+		datatype: 'text/html',
+		success: function(response){
+			$('.content').html(response);
+		},
+		error: function(response){
+		}
+	});
+
+}
+
+//Map page main function
+function changeImg(id, imgURL){
+	$("#f1").hide();
+	$("#f2").hide();
+	$("#t1").hide();
+	$("#t2").hide();
+	$(id).show();
+	$('#map_img').attr('src', imgURL);
+}
+
+//API for getting information of subarea
 function getInfo(num){
 
 	var url = "/v/areas?subArea=" + num;
@@ -31,70 +58,7 @@ function getInfo(num){
 
 }
 
-function callPage(pageRefInput){
-
-	$.ajax({
-		url: pageRefInput,
-		type: 'GET',
-		datatype: 'text/html',
-		success: function(response){
-			$('.content').html(response);
-		},
-		error: function(response){
-		}
-	});
-
-}
-
-function changeImg(id, imgURL){
-	$("#f1").hide();
-	$("#f2").hide();
-	$("#t1").hide();
-	$("#t2").hide();
-	$(id).show();
-	$('#map_img').attr('src', imgURL);
-}
-
-
-// The functions below are the API in which may or may not be use in the future
-
-//Get floor info.
-function getFloor(num){
-
-	$.ajax({
-		url: "url:/v/areas",
-		type: 'GET',
-		datatype: 'json',
-		success: function(response){
-			
-		},
-		error: function(response){
-			
-		}
-	});
-	
-}
-
-//Get list of subarea
-function getArea(num){
-
-	var url = "url:/v/areas?subArea=" + num;
-
-	$.ajax({
-		url: url,
-		type: 'GET',
-		datatype: 'json',
-		success: function(response){
-			
-		},
-		error: function(response){
-			
-		}
-	});
-
-}
-
-//User log-in
+//API for User log-in
 function userLogIn(){
 	
 	$.ajax({
@@ -102,15 +66,43 @@ function userLogIn(){
 		type: 'POST',
 		datatype: 'json',
 		data: JSON.stringify({
-			"username": $('#username').val(),
-			"password": $('#password').val()
+			"username": $('#usr').val(),
+			"password": $('#pwd').val()
 		}),
 		success: function(response){
-			
+			if(response.status == '0'){
+				$('#loginUsr').text($('#usr').val());
+				$("#noUsr").hide();
+				$("#loggedIn").show();
+				$("#loggedInAlert").show();
+				$('#loggedInAlert').delay(3000).fadeOut('slow');
+				callPage('home.html');
+			}else{
+				$("#ErrorLogInAlert").show();
+				$("#ErrorLogInAlert").delay(3000).fadeOut('slow');
+			}
 		},
 		error: function(response){
-			
+			$("#ErrorResponseAlert").show();
+			$("#ErrorResponseAlert").delay(3000).fadeOut('slow');
 		}
 	});
 
+}
+
+//User log-in without API for debugging
+function userLogInForTest(){
+	console.log('logged in');
+	$('#loginUsr').text($('#usr').val());
+	$("#noUsr").hide();
+	$("#loggedIn").show();
+	$("#loggedInAlert").show();
+	$('#loggedInAlert').delay(3000).fadeOut('slow');
+	callPage('home.html');
+}
+
+function userLogOut(){
+	console.log('logged out');
+	$("#loggedIn").hide();
+	$("#noUsr").show();
 }

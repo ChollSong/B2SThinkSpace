@@ -1,31 +1,31 @@
+<div class="col-xs-2"/>
 <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Select level
+  <button class="btn btn-default dropdown-toggle col-xs-12" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Select level
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <ul class="dropdown-menu col-xs-12" style="text-align:center" aria-labelledby="dropdownMenu1">
     <li><a onclick="changeImg('#f1', 'img/f1_img.jpg')">Floor 1</a></li>
     <li><a onclick="changeImg('#t1', 'img/t1_img.jpg')">Terrace 1</a></li>
     <li><a onclick="changeImg('#t2', 'img/t2_img.jpg')">Terrace 2</a></li>
     <li><a onclick="changeImg('#f2', 'img/f2_img.jpg')">Floor 2</a></li>
   </ul>
 </div>
+</div>
 
 </br>
-
-
 
 <!--Floor 1-->
 <div id="f1">
 	<!-- Trigger the modal with a button -->
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(11)' data-toggle="modal" data-target="#mmap">TRAVEL</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(0)' data-toggle="modal" data-target="#mmap">TRAVEL</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(12)' data-toggle="modal" data-target="#mmap">LEISURE</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(1)' data-toggle="modal" data-target="#mmap">LEISURE</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(0)' data-toggle="modal" data-target="#mmap">CRAFT</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(2)' data-toggle="modal" data-target="#mmap">CRAFT</button>
 		</div>
 	</div>
 </div>
@@ -36,10 +36,10 @@
 	<!-- Trigger the modal with a button -->
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(1)' data-toggle="modal" data-target="#mmap">SMART</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(3)' data-toggle="modal" data-target="#mmap">SMART</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(2)' data-toggle="modal" data-target="#mmap">WISDOM</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(4)' data-toggle="modal" data-target="#mmap">WISDOM</button>
 		</div>
 	</div>
 </div>
@@ -49,7 +49,7 @@
 	<!-- Trigger the modal with a button -->
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(3)' data-toggle="modal" data-target="#mmap">FICTION</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(5)' data-toggle="modal" data-target="#mmap">FICTION</button>
 		</div>
 	</div>
 </div>
@@ -59,27 +59,27 @@
 	<!-- Trigger the modal with a button -->
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(4)' data-toggle="modal" data-target="#mmap">COOKING</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(6)' data-toggle="modal" data-target="#mmap">COOKING</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(5)' data-toggle="modal" data-target="#mmap">STUDY</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(7)' data-toggle="modal" data-target="#mmap">STUDY</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(6)' data-toggle="modal" data-target="#mmap">FAMILY</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(8)' data-toggle="modal" data-target="#mmap">FAMILY</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(7)' data-toggle="modal" data-target="#mmap">WORK</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(9)' data-toggle="modal" data-target="#mmap">WORK</button>
 		</div>
 	</div>
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(8)' data-toggle="modal" data-target="#mmap">ENTERTAINMENT</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(10)' data-toggle="modal" data-target="#mmap">ENTERTAINMENT</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(9)' data-toggle="modal" data-target="#mmap">ART&DESIGN</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(11)' data-toggle="modal" data-target="#mmap">ART&DESIGN</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(10)' data-toggle="modal" data-target="#mmap">PLAY&LEARN</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(12)' data-toggle="modal" data-target="#mmap">PLAY&LEARN</button>
 		</div>
 	</div>
 </div>
