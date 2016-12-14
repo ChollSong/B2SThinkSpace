@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended : true
 }));
+
  app.use(express.static(__dirname));
 
 
@@ -37,7 +38,7 @@ app.get('/v/areas', function(req,res){
         if(err){
             console.log(err);
             res.send({
-                'status':0,
+                'status':1,
                 'error':err
             })
         }else{
@@ -47,7 +48,7 @@ app.get('/v/areas', function(req,res){
             }, function (err, doc) {
                 if (err) {
                     return res.send({
-                        'status' : 0,
+                        'status' : 1,
                         'error' : err
                     });
                 } else if (doc != null) {
@@ -56,13 +57,14 @@ app.get('/v/areas', function(req,res){
                         'status' : 0,
                         'area_name' : doc.name,
                    'information': doc.information,
-                    'seat_available': doc.seat_available
+                    'seat_available': doc.seat_available,
+                        'items': doc.items
 
                     });
                 } else {
                     console.log('Can not find ' + req.query.subArea + '.');
                     return res.send({
-                        'status' : 0,
+                        'status' : 1,
                         'error' : "not found"
                     });
                 }
@@ -74,7 +76,7 @@ app.get('/v/areas', function(req,res){
 
 //for testing ignore
 
-app.post('/test', function(req, res){
+app.post('/v/user', function(req, res){
     MongoClient.connect(mongoUrl, function (err, db) {
         if(err){
             console.log(err);
@@ -83,19 +85,35 @@ app.post('/test', function(req, res){
                 msg:"db error"
             })
         }else{
-            var collection = db.collection('testCollection');
-            var user = {
-                name : '',
-                data : 50
-            };
-            collection.insert(user, function (err, doc) {
-               if(err){
-                   console.log("error has occured");
-               } else{
-                   console.log("input successful");
-               }
+            var collection = db.collection('Users');
+            collection.findOne({
+                'username' : req.body.username,
+                'password': req.body.password
+            }, function (err, doc) {
+                if (err) {
+                    return res.send({
+                        'status' : 1,
+                        'message' : err
+                    });
+                } else if (doc != null) {
+                    console.log('Found ' + req.body.username + '.');
+                    return res.send({
+                        'status' : 0,
+                        'message' : 'user found'
+
+                    });
+                } else {
+                    console.log('Can not find ' + req.body + '.');
+                    return res.send({
+                        'status' : 1,
+                        'message' : 'user not found'
+                    });
+                }
             });
+
         }
+
+        db.close();
     });
 
 });
