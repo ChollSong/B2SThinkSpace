@@ -2,20 +2,21 @@
  * Created by Choll on 12/12/2016.
  */
 var express = require('express');
+var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 var path = require('path');
 var app = express();
 var http = require('http').Server(app);
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 var port = 3000;
 
 var mongoUrl = 'mongodb://localhost:27017/test1';
 
 var MongoClient = mongodb.MongoClient;
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended : true
-}));
+
 
  app.use(express.static(__dirname));
 
@@ -56,8 +57,8 @@ app.get('/v/areas', function(req,res){
                     return res.send({
                         'status' : 0,
                         'area_name' : doc.name,
-                   'information': doc.information,
-                    'seat_available': doc.seat_available,
+                       'information': doc.information,
+                         'seat_available': doc.seat_available,
                         'items': doc.items
 
                     });
@@ -103,7 +104,7 @@ app.post('/v/user', function(req, res){
 
                     });
                 } else {
-                    console.log('Can not find ' + req.body + '.');
+                    console.log('Can not find ' + req.body.username+ '.');
                     return res.send({
                         'status' : 1,
                         'message' : 'user not found'

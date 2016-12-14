@@ -66,9 +66,10 @@ function getInfoAndProductList(num){
 		url: url,
 		type: 'GET',
 		success: function(response){
+			console.log(response.items.length);
+            $('#listOfProduct').empty();
 			for(var i = 0; i < response.items.length; i++){
-				$('#listOfProduct').empty();
-				createProductElement('img/test.jpg', response.items.name[i], 'LOREM IPSUM');
+				createProductElement('img/test.jpg', response.items[i].name, 'LOREM IPSUM');
 			}
 		},
 		error: function(response){
@@ -86,10 +87,10 @@ function userLogIn(){
 		url: '/v/user',
 		type: 'POST',
 		datatype: 'json',
-		data: JSON.stringify({
+		data: {
 			"username": $('#usr').val(),
 			"password": $('#pwd').val()
-		}),
+		},
 		success: function(response){
 			if(response.status == '0'){
 				$('#loginUsr').text($('#usr').val());
