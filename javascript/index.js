@@ -66,7 +66,7 @@ function getInfoAndProductList(num){
 		url: url,
 		type: 'GET',
 		success: function(response){
-			for(var i = 0; i < response.items.length; i++){
+			for(var i = 0, i < response.items.length, i++){
 				$('#listOfProduct').empty();
 				createProductElement('img/test.jpg', response.items.name[i], 'LOREM IPSUM');
 			}
@@ -129,5 +129,5 @@ function userLogOut(){
 }
 
 function createProductElement(img, productName, productInfo){
-	 $('<div class="col-sm-6 col-md-4"><div class="thumbnail"><img src="' + img + '"><div class="caption"><h3>' + productName + '</h3><p>' + productInfo '</p></div></div></div>').appendTo("#listOfProduct");
+	 $('<div class="col-sm-6 col-md-4"><div class="thumbnail"><img src="' + img + '"><div class="caption"><h3>' + productName + '</h3><p>' + productInfo + '</p></div></div></div>').appendTo("#listOfProduct");
 }
