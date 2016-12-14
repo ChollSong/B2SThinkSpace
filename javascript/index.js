@@ -44,15 +44,36 @@ function getInfo(num){
 	$.ajax({
 		url: url,
 		type: 'GET',
-		success: [function(response){
+		success: function(response){
 			$('#m_name').text(response.area_name);
 			$('#m_info').text(response.information);
 			$('#m_snum').text(response.seat_available);
-			console.log(response);
-		}],
+		},
 		error: function(response){
-			console.log('error');
-			console.log(response);
+			$('#m_name').text('Error');
+			$('#m_info').text('Cannot connect to the server');
+			$('#m_snum').text('??');
+		}
+	});
+
+}
+
+function getInfoAndProductList(num){
+
+	var url = "/v/areas?subArea=" + num;
+
+	$.ajax({
+		url: url,
+		type: 'GET',
+		success: function(response){
+			for(var i = 0; i < response.items.length; i++){
+				$('#listOfProduct').empty();
+				createProductElement('img/test.jpg', response.items.name[i], 'LOREM IPSUM');
+			}
+		},
+		error: function(response){
+			$("#ErrorResponseProduct").show();
+			$("#ErrorResponseProduct").delay(3000).fadeOut('slow');
 		}
 	});
 
@@ -105,4 +126,8 @@ function userLogOut(){
 	console.log('logged out');
 	$("#loggedIn").hide();
 	$("#noUsr").show();
+}
+
+function createProductElement(img, productName, productInfo){
+	 $('<div class="col-sm-6 col-md-4"><div class="thumbnail"><img src="' + img + '"><div class="caption"><h3>' + productName + '</h3><p>' + productInfo '</p></div></div></div>').appendTo("#listOfProduct");
 }
