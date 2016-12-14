@@ -1,7 +1,3 @@
-var mHead = '';
-var mText = '';
-var mSeat = '';
-
 $(document).ready(function(){
 
 	callPage('home.html');
@@ -54,6 +50,7 @@ function changeImg(id, imgURL){
 	$("#f1").hide();
 	$("#f2").hide();
 	$("#t1").hide();
+	$("#t2").hide();
 	$(id).show();
 	$('#map_img').attr('src', imgURL);
 }

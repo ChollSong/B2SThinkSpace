@@ -1,32 +1,31 @@
-d<div class="btn-group btn-group-justified" role="group" aria-label="...">
-	<div class="btn-group" role="group">
-		<button type="button" class="btn btn-default" onclick="changeImg('#f1', 'img/f1_img.jpg')">Floor 1</button>
-	</div>
-	<div class="btn-group" role="group">
-		<button type="button" class="btn btn-default" onclick="changeImg('#t1', 'img/t1_img.jpg')">Terrace</button>
-	</div>
-	<div class="btn-group" role="group">
-		<button type="button" class="btn btn-default" onclick="changeImg('#f2', 'img/f2_img.jpg')">Floor 2</button>
-	</div>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Select level
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a onclick="changeImg('#f1', 'img/f1_img.jpg')">Floor 1</a></li>
+    <li><a onclick="changeImg('#t1', 'img/t1_img.jpg')">Terrace 1</a></li>
+    <li><a onclick="changeImg('#t2', 'img/t2_img.jpg')">Terrace 2</a></li>
+    <li><a onclick="changeImg('#f2', 'img/f2_img.jpg')">Floor 2</a></li>
+  </ul>
 </div>
 
 </br>
 
-<div>
-	<img id = "map_img" src="img/f1_img.jpg" class = "img-responsive center-block">
-</div>
 
-</br>
 
 <!--Floor 1-->
 <div id="f1">
 	<!-- Trigger the modal with a button -->
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(0)' data-toggle="modal" data-target="#mmap">CRAFT</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(11)' data-toggle="modal" data-target="#mmap">TRAVEL</button>
 		</div>
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" onclick = 'getInfo(1)' data-toggle="modal" data-target="#mmap">SMART</button>
+			<button type="button" class="btn btn-default" onclick = 'getInfo(12)' data-toggle="modal" data-target="#mmap">LEISURE</button>
+		</div>
+		<div class="btn-group" role="group">
+			<button type="button" class="btn btn-default" onclick = 'getInfo(0)' data-toggle="modal" data-target="#mmap">CRAFT</button>
 		</div>
 	</div>
 </div>
@@ -37,8 +36,18 @@ d<div class="btn-group btn-group-justified" role="group" aria-label="...">
 	<!-- Trigger the modal with a button -->
 	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
+			<button type="button" class="btn btn-default" onclick = 'getInfo(1)' data-toggle="modal" data-target="#mmap">SMART</button>
+		</div>
+		<div class="btn-group" role="group">
 			<button type="button" class="btn btn-default" onclick = 'getInfo(2)' data-toggle="modal" data-target="#mmap">WISDOM</button>
 		</div>
+	</div>
+</div>
+
+<!--Terrace 2 -->
+<div id="t2" style = "display: none;">
+	<!-- Trigger the modal with a button -->
+	<div class="btn-group btn-group-justified" role="group" aria-label="...">
 		<div class="btn-group" role="group">
 			<button type="button" class="btn btn-default" onclick = 'getInfo(3)' data-toggle="modal" data-target="#mmap">FICTION</button>
 		</div>
@@ -94,4 +103,10 @@ d<div class="btn-group btn-group-justified" role="group" aria-label="...">
 			</div>
 		</div>
 	</div>
+</div>
+
+</br>
+
+<div>
+	<img id = "map_img" src="img/f1_img.jpg" class = "img-responsive center-block">
 </div>
