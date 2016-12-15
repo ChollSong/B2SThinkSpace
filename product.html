@@ -1,33 +1,37 @@
-<div class="dropdown">
+<div id="ErrorResponseProduct" class="alert alert-danger" style = "display: none; margin-left:3%; margin-right:3%">
+    Error! Cannot obtain response from the server
+</div>
+
+<div class="panel panel-default" style="margin-left:3%; margin-right:3%";>
+  <div class="panel-body">
+    <div class="dropdown">
   <button class="btn btn-default dropdown-toggle col-xs-12" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Select level
     <span class="caret"></span>
   </button>
-  	<ul class="dropdown-menu col-xs-12" style="text-align:center" aria-labelledby="dropdownMenu3">
-  		<li class="dropdown-header">Floor 1</li>
- 		<li><a onclick = 'getInfoAndProductList(0)'>Travel</a></li>
- 		<li><a onclick = 'getInfoAndProductList(1)'>Leisure</a></li>
- 	  	<li><a href="#">Craft</a></li>
-  		<li class="dropdown-header">Terrace 1</li>
-  		<li><a onclick = 'getInfoAndProductList(2)'>Smart</a></li>
-  		<li><a onclick = 'getInfoAndProductList(3)'>Wisdom</a></li>
-  		<li class="dropdown-header">Terrace 2</li>
- 	  	<li><a onclick = 'getInfoAndProductList(4)'>Fiction</a></li>
- 	  	<li class="dropdown-header">Floor 2</li>
- 	  	<li><a onclick = 'getInfoAndProductList(5)'>Cooking</a></li>
- 		<li><a onclick = 'getInfoAndProductList(6)'>Study</a></li>
- 	  	<li><a onclick = 'getInfoAndProductList(7)'>Family</a></li>
- 	  	<li><a onclick = 'getInfoAndProductList(8)'>Work</a></li>
- 		<li><a onclick = 'getInfoAndProductList(9)'>Entertainment</a></li>
- 	  	<li><a onclick = 'getInfoAndProductList(10)'>Art & Design</a></li>
-	</ul>
+    <ul class="dropdown-menu col-xs-12" style="text-align:center" aria-labelledby="dropdownMenu3">
+      <li class="dropdown-header">Floor 1</li>
+    <li><a onclick = 'getInfoAndProductList(0)'>Travel</a></li>
+    <li><a onclick = 'getInfoAndProductList(1)'>Leisure</a></li>
+      <li><a href="#">Craft</a></li>
+      <li class="dropdown-header">Terrace 1</li>
+      <li><a onclick = 'getInfoAndProductList(2)'>Smart</a></li>
+      <li><a onclick = 'getInfoAndProductList(3)'>Wisdom</a></li>
+      <li class="dropdown-header">Terrace 2</li>
+      <li><a onclick = 'getInfoAndProductList(4)'>Fiction</a></li>
+      <li class="dropdown-header">Floor 2</li>
+      <li><a onclick = 'getInfoAndProductList(5)'>Cooking</a></li>
+    <li><a onclick = 'getInfoAndProductList(6)'>Study</a></li>
+      <li><a onclick = 'getInfoAndProductList(7)'>Family</a></li>
+      <li><a onclick = 'getInfoAndProductList(8)'>Work</a></li>
+    <li><a onclick = 'getInfoAndProductList(9)'>Entertainment</a></li>
+      <li><a onclick = 'getInfoAndProductList(10)'>Art & Design</a></li>
+  </ul>
 </div>
-
-<div id="ErrorResponseProduct" class="alert alert-danger" style = "display: none;">
-  	Error! Cannot obtain response from the server
+  </div>
 </div>
 
 <div>
-	<div id="listOfProduct" class="row">
+	<div id="listOfProduct" class="row" style="margin-left:3%; margin-right:3%;">
 	</div>
 </div>
 
