@@ -112,6 +112,32 @@ function userLogIn(){
 
 }
 
+function searchProduct(){
+	$('#listOfProduct').empty();
+	for(var i = 0; i < 12; i ++){
+		var url = "/v/areas?subArea=" + i;
+
+		$.ajax({
+			url: url,
+			type: 'GET',
+			success: function(response){
+				console.log(response.items.length);
+	            $('#listOfProduct').empty();
+				for(var j = 0; j < response.items.length; j++){
+					if(response.items[j].name == $("#searchInput").val()){
+						createProductElement('img/test.jpg', response.items[j].name, 'LOREM IPSUM');
+					}
+				}
+			},
+			error: function(response){
+				$("#ErrorResponseProduct").show();
+				$("#ErrorResponseProduct").delay(3000).fadeOut('slow');
+			}
+		});
+	}
+
+}
+
 //User log-in without API for debugging
 function userLogInForTest(){
 	console.log('logged in');
